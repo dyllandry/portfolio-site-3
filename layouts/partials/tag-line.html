@@ -1,0 +1,18 @@
+<div class="tag-line">
+  <div class="tag-line--background"></div>
+  <h2 class="tag-line--text">
+    <noscript>Web Developer</noscript>
+    <span>W</span><span>e</span><span>b</span><span> </span><span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span>
+  </h2>
+  <script>
+    (function () {
+      var tagline = document.querySelector('.tag-line')
+      var taglineText = document.querySelectorAll('.tag-line--text span')
+      taglineText.forEach((char, index) => {
+        setTimeout(() => {
+          char.style.opacity = 1;
+        }, 1000 + index * 50)
+      })
+    })()
+  </script>
+</div>
