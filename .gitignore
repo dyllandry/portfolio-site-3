@@ -1,2 +1,6 @@
+# hugo built resources
+resources/
 public
+
+# editor config files
 .vscode

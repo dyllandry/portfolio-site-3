@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title> 
+  {{ $criticalCss := .Resources.GetMatch "critical.pcss" }}
+  {{ $criticalStyle := $criticalCss | resources.PostCSS }}
+  <style>{{ $criticalStyle.Content | safeCSS }}</style>
 </head>
 <body>
 
-{{ block "main" . }}
-{{ end }}
+  {{ block "main" . }}
+
+  {{ end }}
   
 </body>
 </html>
