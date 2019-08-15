@@ -12,6 +12,8 @@ $small-space: 12px;
 $color-primary: rgb(58, 131, 220);
 $color-primary-dark: hsla(213, 70%, 45%, 1);
 
+@custom-media --viewport-small (width <= 380px);
+
 /* ANCHOR RESET */
 body,
 h1,
@@ -62,6 +64,12 @@ body {
   &--title {
     font-size: 28px;
     font-weight: bold;
+  }
+
+  &--sub-title {
+    @media (--viewport-small) {
+      display: none;
+    }
   }
 
   &--content {

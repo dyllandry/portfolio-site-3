@@ -1,5 +1,5 @@
 # TODO 
 - Roboto font.
-- Icons (linkedin, github, dev.to)
-  - defer images
-  - abs placeholder, same radius, fades out when image loaded
+- On small width...
+  - hide 'Landry' part of title
+- add 'Web Developer' somewhere
