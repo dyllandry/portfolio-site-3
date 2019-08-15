@@ -7,6 +7,7 @@
   {{ $criticalCss := .Resources.GetMatch "critical.css" }}
   {{ $criticalStyle := $criticalCss | resources.PostCSS }}
   <style>{{ $criticalStyle.Content | safeCSS }}</style>
+  <script defer src="https://kit.fontawesome.com/f60b7eadbc.js"></script>
 </head>
 <body class="body">
 
