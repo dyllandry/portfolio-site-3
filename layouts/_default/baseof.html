@@ -4,15 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title> 
-  {{ $criticalCss := .Resources.GetMatch "critical.pcss" }}
+  {{ $criticalCss := .Resources.GetMatch "critical.css" }}
   {{ $criticalStyle := $criticalCss | resources.PostCSS }}
   <style>{{ $criticalStyle.Content | safeCSS }}</style>
 </head>
-<body>
+<body class="body">
 
   {{ block "main" . }}
 
   {{ end }}
   
+  {{/*  defer loading of non critical stylesheet  */}}
+  {{ $nonCriticalCss := .Resources.GetMatch "non-critical.css" }}
+  {{ $nonCriticalStyle := $nonCriticalCss | resources.PostCSS }}
+  <link 
+    rel="preload"
+    href="{{ $nonCriticalStyle.RelPermalink }}"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  >
+  <noscript><link rel="stylesheet" href="{{ $nonCriticalStyle.RelPermalink }}"></noscript>
 </body>
 </html>
