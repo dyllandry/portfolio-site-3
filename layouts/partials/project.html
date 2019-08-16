@@ -1,0 +1,70 @@
+<div class="project">
+
+  {{ with .Params.thumbnail }}
+    {{ $image := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .) }}
+    {{ $image = $image.Fill "400x300" }} 
+    {{ $width := div $image.Width 1.0 }}
+    {{ $paddingPercentage := div $image.Height $width }}
+    {{ if ne $.Params.demo_url "" }}
+      <a href="{{ $.Params.demo_url }}">
+    {{ end }}
+    <div class="project-image" style="padding-bottom: {{ mul $paddingPercentage $width }}px">
+      <div class="project-image--placeholder"></div>
+      <img src="" alt="">
+    </div>
+    {{ if ne $.Params.demo_url "" }}
+      </a>
+    {{ end }}
+  {{ end }}
+
+  <div class="project--text">
+    
+    <h3 class="project--title">{{ .Params.Title }}</h3>
+    
+    <p class="project--description">{{ .Params.Description }}</p>
+
+  </div>
+
+    <div class="project--links">
+        <a class="project--anchor" href="{{ .Params.repository_url }}">
+          <div class="project--url">
+            Repository
+          </div>
+        </a>
+        {{ if ne .Params.demo_url "" }}
+          <a class="project--anchor" href="{{ .Params.demo_url }}">
+            <div class="project--url project--demo">
+              Live Demo
+            </div>
+          </a>
+        {{ end }}
+      </div>
+
+  {{/*  {{ if ne .Params.demo_url "" }}
+    <a class="project--image-link" href="{{ .Params.demo_url }}">
+  {{ end }}
+    <img class="project--image" src="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" alt="">
+  {{ if ne .Params.demo_url "" }}
+    </a>
+  {{ end }}
+
+  <h2 class="project--title">{{ .Params.Title }}</h2>
+
+  <p class="project--description">{{ .Params.Description }}</p>
+
+  <div class="project--links">
+    <a class="project--anchor" href="{{ .Params.repository_url }}">
+      <div class="project--url">
+        Repository
+      </div>
+    </a>
+    {{ if ne .Params.demo_url "" }}
+      <a class="project--anchor" href="{{ .Params.demo_url }}">
+        <div class="project--url project--demo">
+          Live Demo
+        </div>
+      </a>
+    {{ end }}
+  </div>  */}}
+
+</div>

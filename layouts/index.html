@@ -2,8 +2,18 @@
 
   <div class="body--background"></div>
 
-  <div>
+  <ul class="projects-list">
     
-  </div>
+    {{ range sort .Site.Pages "Params.Order"}}
+      {{ if and (eq .Type "projects") (.IsPage) }}
+      
+        <li class="projects-list--item">
+          {{ partial "project" . }}
+        </li>
+
+      {{ end }}
+    {{ end }}
+    
+  </ul>
 
 {{ end }}

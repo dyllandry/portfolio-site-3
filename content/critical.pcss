@@ -16,8 +16,14 @@ $very-small-font: 16px;
 
 $color-primary: rgb(58, 131, 220);
 $color-primary-dark: hsla(213, 70%, 45%, 1);
+$grey: #e4e4e4;
+
+/* ANCHOR LOST SETTINGS */
+@lost gutter 24px;
+@lost flexbox flex;
 
 @custom-media --viewport-small (width <= 380px);
+@custom-media --viewport-medium (width <= 650px);
 
 /* ANCHOR RESET */
 body,
@@ -49,13 +55,14 @@ body {
 .body {
   background-color: #f7f7f7;
   transition: background-color 3s;
+  position: relative;
 
   &--background {
     position: absolute;
-    top: 0;
-    z-index: -1;
     width: 100%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
   }
 
 }
@@ -130,6 +137,11 @@ body {
   svg {
     position: relative;
     top: -2px;
+    /** 
+    * font awesome icon sizes are based on em, so a changing parent's font size 
+    * can affect the icon's size. 
+    */
+    font-size: 32px; 
   }
 }
 
@@ -173,10 +185,63 @@ body {
   }
 }
 
+.projects-list {
+  lost-center: $max-width;
+  padding: $medium-space;
+  padding-top: $large-space;
+  lost-utility: clearfix;
+  
+  &--item {
+    lost-column: 1/2;
+    margin-bottom: $large-space;
+    @media (--viewport-medium) {
+      lost-column: 1;
+    }
+  }
+}
+
 .project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+  border: 1px solid $grey;
+  border-radius: 3px;
+
+  &--title {
+    font-weight: bold;
+  }
+
+  &--text {
+    padding: $small-space;
+    padding-bottom: 0;
+  }
 
   &--description {
+    margin-top: $medium-space;
     font-size: $small-font;
   }
+
+  &--links {
+    font-size: $small-font;
+    display: flex;
+    margin-top: auto;
+    padding: $medium-space;
+    justify-content: space-between;
+  }
+
+  &--anchor {
+    text-decoration: none;
+    color: $color-primary;
+    :hover {
+      color: $color-primary-dark;
+    }
+  }
   
+}
+
+.project-image {
+  position: relative;
+  height: 0;
+  background-color: red;
 }
