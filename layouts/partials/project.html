@@ -2,15 +2,15 @@
 
   {{ with .Params.thumbnail }}
     {{ $image := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .) }}
-    {{ $image = $image.Fill "400x300" }} 
+    {{ $image = $image.Resize "1000x" }} 
     {{ $width := div $image.Width 1.0 }}
     {{ $paddingPercentage := div $image.Height $width }}
     {{ if ne $.Params.demo_url "" }}
       <a href="{{ $.Params.demo_url }}">
     {{ end }}
-    <div class="project-image" style="padding-bottom: {{ mul $paddingPercentage $width }}px">
+    <div class="project-image" style="padding-bottom: {{ mul $paddingPercentage 100 }}%">
       <div class="project-image--placeholder"></div>
-      <img src="" alt="">
+      <img class="project-image--img" src="{{ $image.RelPermalink }}" alt="">
     </div>
     {{ if ne $.Params.demo_url "" }}
       </a>
@@ -27,7 +27,7 @@
 
     <div class="project--links">
         <a class="project--anchor" href="{{ .Params.repository_url }}">
-          <div class="project--url">
+          <div class="project--url project--repo">
             Repository
           </div>
         </a>

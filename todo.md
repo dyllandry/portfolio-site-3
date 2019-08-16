@@ -1,5 +1,7 @@
 # TODO 
-- Roboto font.
 - Add card secondry text "frontend prototype"?
 - Build image placeholders with potrace
-- embed aspect ratio in image container padding
+
+## Maybe TODO 
+- Rollback corner of project thumbnail on hover
+- Add block cursor to tag line
