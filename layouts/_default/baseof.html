@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title> 
-  {{ $criticalCss := .Resources.GetMatch "critical.css" }}
-  {{ $criticalStyle := $criticalCss | resources.PostCSS }}
+  {{ $criticalCss := .Resources.GetMatch "critical.pcss" | toCSS }}
+  {{ $criticalStyle := $criticalCss | postCSS }}
   <style>{{ $criticalStyle.Content | safeCSS }}</style>
   <script defer src="https://kit.fontawesome.com/f60b7eadbc.js"></script>
 </head>
@@ -19,14 +19,15 @@
   {{ end }}
   
   {{/*  defer loading of non critical stylesheet  */}}
-  {{ $nonCriticalCss := .Resources.GetMatch "non-critical.css" }}
-  {{ $nonCriticalStyle := $nonCriticalCss | resources.PostCSS }}
+  {{ $nonCriticalCss := .Resources.GetMatch "non-critical.pcss" | toCSS (dict "targetPath" "non-critical.css") }}
+  {{ $nonCriticalStyle := $nonCriticalCss | postCSS }}
   <link 
     rel="preload"
     href="{{ $nonCriticalStyle.RelPermalink }}"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'"
   >
+  {{/*  Fallback incase of javascript being disabled  */}}
   <noscript><link rel="stylesheet" href="{{ $nonCriticalStyle.RelPermalink }}"></noscript>
 </body>
 </html>
