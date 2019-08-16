@@ -10,7 +10,10 @@
   <script defer src="https://kit.fontawesome.com/f60b7eadbc.js"></script>
 </head>
 <body class="body">
+  {{ partial "header" . }}
 
+  {{ partial "tag-line" . }}
+  
   {{ block "main" . }}
 
   {{ end }}
