@@ -263,6 +263,20 @@ body {
   height: 0;
   width: 100%;
 
+  &--placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 2;
+    background-size: cover;
+    filter: blur(1px);
+  }
+
   &--img {
     width: 100%;
   }

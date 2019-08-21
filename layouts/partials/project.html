@@ -5,12 +5,24 @@
     {{ $image = $image.Resize "1000x" }} 
     {{ $width := div $image.Width 1.0 }}
     {{ $paddingPercentage := div $image.Height $width }}
+    {{ $placeholder := $image.Resize "21x Gaussin"}}
+    {{ $placeholderId := base64Encode $placeholder.Name }}
     {{ if ne $.Params.demo_url "" }}
       <a href="{{ $.Params.demo_url }}">
     {{ end }}
     <div class="project-image" style="padding-bottom: {{ mul $paddingPercentage 100 }}%">
-      <div class="project-image--placeholder"></div>
-      <img class="project-image--img" src="{{ $image.RelPermalink }}" alt="">
+      <div 
+        class="project-image--placeholder"
+        style="background-image: url(data:image/png;base64,{{ base64Encode $placeholder.Content }})"
+        data-placeholder-id='{{ $placeholderId }}'
+      >
+      </div>
+      <img 
+        class="project-image--img"
+        data-placeholder-id='{{ $placeholderId }}'
+        alt="{{ $.Params.thumbnail_alt }}"
+        data-src="{{ $image.RelPermalink }}"
+      >
     </div>
     {{ if ne $.Params.demo_url "" }}
       </a>

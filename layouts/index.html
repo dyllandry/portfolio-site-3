@@ -13,6 +13,25 @@
 
       {{ end }}
     {{ end }}
+
+    <!-- attach project image onload to remove placeholders  -->
+    <script>
+      (function() {
+        var imageDivs = document.querySelectorAll('.project-image')
+        for (var i = 0; i < imageDivs.length; i++) {
+          var imageDiv = imageDivs[i]
+          var image = imageDiv.querySelector('.project-image--img')
+          image.onload = function () {
+            var id = this.getAttribute('data-placeholder-id')
+            var placeholder = document.querySelector('.project-image--placeholder[data-placeholder-id="'+id+'"')
+            placeholder.style.opacity = 0;
+            this.onload = null
+          }
+          var src = image.getAttribute( 'data-src')
+          image.src = src
+        }
+      })()
+    </script>
     
   </ul>
 
