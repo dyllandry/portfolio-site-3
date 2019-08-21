@@ -1,12 +1,11 @@
 # TODO 
 - Add card secondry text "frontend prototype"?
     - "tag-line" ?
-- Add footer
-    - font-awesome attributions
-    - raw contact info
 - download and put svgs in public
     - font-awesome 'free-min.js' is 500kb
     - try to keep white color
+    - add attributions to footer
+    - background pattern attribution
 - observer to load only image looking at
 - build image srcset
 

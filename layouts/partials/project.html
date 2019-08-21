@@ -33,7 +33,12 @@
     
     <h3 class="project--title">{{ .Params.Title }}</h3>
     
-    <p class="project--description">{{ .Params.Description }}</p>
+    <p class="project--description">
+      {{ .Params.Description }}
+      {{ if and (isset $.Params "blog_post_url") (ne $.Params.blog_post_url "") }}
+        <a href="{{ $.Params.blog_post_url }}">Read more...</a>
+      {{ end }}
+    </p>
 
   </div>
 
