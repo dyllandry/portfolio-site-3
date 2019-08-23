@@ -1,7 +1,7 @@
 +++
 blog_post_url = ""
 demo_url = "https://www.whitehorsemasonry.com"
-description = "🏠 Full masonry image gallery with email contact form. Images are compressed for mobile devices and various screen resolutions to ensure fast loading on even slow networks."
+description = "Full masonry image gallery with email contact form. Images are compressed for mobile devices and various screen resolutions to ensure fast loading on even slow networks."
 order = 4
 repository_url = "https://github.com/dyllandry/white-horse-masonry-services"
 tagline = "Responsive Webpack image pipeline for reducing gallery bandwidth."
