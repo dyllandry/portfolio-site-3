@@ -32,6 +32,10 @@
   <div class="project--text">
     
     <h3 class="project--title">{{ .Params.Title }}</h3>
+
+    {{ if and (isset .Params "tagline") (ne .Params.tagline "")}}
+      <p class="project--tagline">{{ .Params.Tagline }}</p>
+    {{ end }}
     
     <p class="project--description">
       {{ .Params.Description }}
