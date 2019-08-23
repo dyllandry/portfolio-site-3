@@ -57,5 +57,6 @@ fields:
     required: false
   label: tagline
 pages:
+- content/projects/spendr.md
 - content/projects/retired-portfolio-site.md
 - content/projects/according-to.md
