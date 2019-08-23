@@ -51,5 +51,8 @@ fields:
     max: 
     step: '1'
     required: true
-pages:
-- src/hugo/content/projects/according-to.md
+- name: tagline
+  type: text
+  config:
+    required: false
+  label: tagline
