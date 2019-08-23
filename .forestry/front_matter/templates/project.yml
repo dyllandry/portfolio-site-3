@@ -57,7 +57,7 @@ fields:
     required: false
   label: tagline
 pages:
-- content/projects/whms.md
 - content/projects/spendr.md
+- content/projects/whms.md
 - content/projects/retired-portfolio-site.md
 - content/projects/according-to.md
