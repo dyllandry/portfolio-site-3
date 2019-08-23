@@ -1,7 +1,7 @@
 +++
 blog_post_url = ""
 demo_url = ""
-description = "🌎 Disarm opinions and blog your perspective on world events. Employs heavy use of Test Driven Development for robust code and interfaces. Made with React, Jest, Chai, Sinon, and Strapi CMS."
+description = "Disarm opinions and blog your perspective on world events. Employs heavy use of Test Driven Development for robust code and interfaces. Made with React, Jest, Chai, Sinon, and Strapi CMS."
 order = 2
 repository_url = "https://github.com/dyllandry/according-to-client"
 tagline = "React SPA with functional UI testing."
