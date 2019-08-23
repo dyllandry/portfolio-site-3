@@ -1,0 +1,55 @@
+---
+label: Project
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: repository_url
+  type: text
+  config:
+    required: true
+  label: Repository Url
+- name: demo_url
+  type: text
+  config:
+    required: false
+  label: Demo Url
+- name: blog_post_url
+  type: text
+  config:
+    required: false
+  label: Blog Post Url
+- name: thumbnail
+  type: file
+  config:
+    maxSize: 250
+  label: Thumbnail
+- name: thumbnail_alt
+  type: text
+  config:
+    required: false
+  label: Thumbnail Alt
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: order
+  type: number
+  label: Order
+  description: ''
+  default: '1'
+  config:
+    min: '1'
+    max: 
+    step: '1'
+    required: true
+pages:
+- src/hugo/content/projects/according-to.md
