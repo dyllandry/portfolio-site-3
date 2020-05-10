@@ -1,4 +1,35 @@
 ---
 label: Learning Post
 hide_body: true
-fields: []
+fields:
+- name: date
+  type: datetime
+  label: date
+  description: The date the learning post was completed.
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: type
+  type: text
+  config:
+    required: false
+  label: type
+  description: 'The type of learning post, for example: blog, repo, code, etc.'
+- name: url
+  type: text
+  config:
+    required: false
+  label: url
+  description: Url to the learning post's content.
+- name: description
+  type: text
+  config:
+    required: false
+  label: description
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
