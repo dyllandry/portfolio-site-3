@@ -4,3 +4,6 @@ public
 
 # editor config files
 .vscode
+
+# Node packages
+node_modules
