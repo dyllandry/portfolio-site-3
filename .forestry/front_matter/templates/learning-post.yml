@@ -17,12 +17,12 @@ fields:
     required: false
   label: type
   description: 'The type of learning post, for example: blog, repo, code, etc.'
-- name: url
+- name: post-url
   type: text
   config:
     required: false
-  label: url
   description: Url to the learning post's content.
+  label: post url
 - name: description
   type: text
   config:
