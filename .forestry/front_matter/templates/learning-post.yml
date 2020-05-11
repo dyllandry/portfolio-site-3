@@ -33,3 +33,5 @@ fields:
   config:
     required: false
   label: title
+pages:
+- content/learning-posts/rest-plant-api.md
