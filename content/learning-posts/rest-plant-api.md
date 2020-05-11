@@ -4,6 +4,5 @@ description = "REST API principles quickly demoed with NodeJS, Express, cacti, a
 post-url = "https://github.com/dyllandry/rest-plant-api"
 title = "REST Plant API"
 type = "repo"
-url = "https://github.com/dyllandry/rest-plant-api"
 
 +++
