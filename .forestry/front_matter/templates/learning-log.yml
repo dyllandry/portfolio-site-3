@@ -34,4 +34,4 @@ fields:
     required: false
   label: title
 pages:
-- content/learning-posts/rest-plant-api.md
+- content/learning-log/rest-plant-api.md

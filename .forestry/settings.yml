@@ -20,8 +20,8 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: content/learning-posts
-  label: Learning Posts
+  path: content/learning-log
+  label: Learning Log
   create: all
   match: "**/*"
 upload_dir: static/uploads
