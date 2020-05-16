@@ -1,8 +1,9 @@
 +++
 date = 2020-04-13T04:00:00Z
-description = "REST API principles quickly demoed with NodeJS, Express, cacti, and ferns."
+description = "A barebones demo of REST API principles."
 post-url = "https://github.com/dyllandry/rest-plant-api"
-title = "REST Plant API"
+tags = ["nodejs", " express"]
+title = "REST API Example"
 type = "repo"
 
 +++
