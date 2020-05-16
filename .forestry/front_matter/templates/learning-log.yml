@@ -33,5 +33,9 @@ fields:
   config:
     required: false
   label: title
+- name: tags
+  type: tag_list
+  default: []
+  label: tags
 pages:
 - content/learning-log/rest-plant-api.md
