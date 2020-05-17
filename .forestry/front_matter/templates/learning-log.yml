@@ -33,3 +33,4 @@ fields:
   label: tags
 pages:
 - content/learning-log/rest-plant-api.md
+- content/learning-log/server-sent-events.md
