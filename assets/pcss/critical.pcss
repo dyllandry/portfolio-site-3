@@ -230,7 +230,6 @@ body {
   &--container {
     @extend %max-width;
     padding: 0 $medium-space;
-    margin-top: $large-space;
     margin-bottom: $large-space;
   }
   &--post {
@@ -259,6 +258,16 @@ body {
     border-radius: 3px;
     font-size: 12px;
   }
+  &--date,
+  &--title,
+  &--description,
+  &--tags {
+    @media (--viewport-medium) {
+      display: block;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+  }
 }
 .learning-log--post:hover {
   background: $dark-white;
@@ -271,12 +280,11 @@ body {
   lost-center: $max-width;
   padding: 0 $medium-space;
   margin-top: $large-space;
-  margin-bottom: $large-space;
   lost-utility: clearfix;
   
   &--item {
     lost-column: 1/2;
-    margin-bottom: $very-large-space;
+    margin-bottom: $large-space;
     @media (--viewport-medium) {
       lost-column: 1;
     }

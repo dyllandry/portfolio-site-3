@@ -5,8 +5,7 @@
 ## Learning Posts Page
 
 - [x] add learning logs to home page
-- [ ] see how multiple learning log look
-- add nav bar?
+- [x] see how multiple learning log look
 
 ### Maybe TODO 
 - make section pages for sections without frontmatter content 404

@@ -1,30 +1,5 @@
 {{ define "main" }}
 
-  <div class="learning-log--container">
-    <div class="learning-log">
-      <ol>
-        {{ range .Site.Pages }}
-          {{ if and .IsPage (eq "learning-log" .Type) }}
-            <li>
-              <div class="learning-log--post" onclick='window.location = "{{ .Param "post-url" }}"'>
-                <span class="learning-log--date">{{ dateFormat "2006-01-02" .Params.date }}</span>
-                <span class="learning-log--title">
-                  <a href='{{ .Param "post-url" }}'>{{ .Params.title }}</a>
-                </span>
-                <span class="learning-log--description">{{ .Params.description }}</span>
-                  {{ range .Params.tags  }}
-                    <span class="learning-log--tag">
-                      {{ . }}
-                    </span>
-                  {{ end }}
-              </div>
-            </li>
-          {{ end }}
-        {{ end }}
-      </ol>
-    </div>
-  </div>
-
   <ul class="projects-list">
     
     {{ range sort .Site.Pages "Params.Order"}}
@@ -57,5 +32,32 @@
     </script>
     
   </ul>
+
+  <div class="learning-log--container">
+    <div class="learning-log">
+      <ol>
+        {{ range .Site.Pages }}
+          {{ if and .IsPage (eq "learning-log" .Type) }}
+            <li>
+              <div class="learning-log--post" onclick='window.location = "{{ .Param "post-url" }}"'>
+                <span class="learning-log--date">{{ dateFormat "2006-01-02" .Params.date }}</span>
+                <span class="learning-log--title">
+                  <a href='{{ .Param "post-url" }}'>{{ .Params.title }}</a>
+                </span>
+                <span class="learning-log--description">{{ .Params.description }}</span>
+                <span class="learning-log--tags">
+                  {{ range .Params.tags  }}
+                    <span class="learning-log--tag">
+                      {{ . }}
+                    </span>
+                  {{ end }}
+                </span>
+              </div>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ol>
+    </div>
+  </div>
 
 {{ end }}
