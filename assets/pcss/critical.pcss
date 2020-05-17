@@ -227,18 +227,18 @@ body {
   border: 2px solid $grey;
   background: $white;
   border-radius: $border-radius;
+  &--container {
+    @extend %max-width;
+    padding: 0 $medium-space;
+    margin-top: $large-space;
+    margin-bottom: $large-space;
+  }
+  &--post {
+    padding: 10px $medium-space;
+  }
   &--header {
     margin-top: $medium-space;
     margin-bottom: $medium-space;
-  }
-  &--list {
-    @extend %max-width;
-    margin-top: $medium-space;
-    margin-bottom: $medium-space;
-    padding: 0 $medium-space;
-  }
-  &--content {
-    padding: $small-space;
   }
   &--title {
     font-weight: bold;
@@ -260,7 +260,7 @@ body {
     font-size: 12px;
   }
 }
-.learning-log:hover {
+.learning-log--post:hover {
   background: $dark-white;
   cursor: pointer;
 }

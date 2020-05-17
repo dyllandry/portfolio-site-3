@@ -1,28 +1,28 @@
 {{ define "main" }}
 
-  <div class="learning-log--list">
-    <ol>
-      {{ range .Site.Pages }}
-        {{ if and .IsPage (eq "learning-log" .Type) }}
-          <li>
-            <div class="learning-log" onclick='window.location = "{{ .Param "post-url" }}"'>
-              <div class="learning-log--content">
+  <div class="learning-log--container">
+    <div class="learning-log">
+      <ol>
+        {{ range .Site.Pages }}
+          {{ if and .IsPage (eq "learning-log" .Type) }}
+            <li>
+              <div class="learning-log--post" onclick='window.location = "{{ .Param "post-url" }}"'>
                 <span class="learning-log--date">{{ dateFormat "2006-01-02" .Params.date }}</span>
                 <span class="learning-log--title">
                   <a href='{{ .Param "post-url" }}'>{{ .Params.title }}</a>
                 </span>
                 <span class="learning-log--description">{{ .Params.description }}</span>
                   {{ range .Params.tags  }}
-                  <span class="learning-log--tag">
-                    {{ . }}
-                  </span>
+                    <span class="learning-log--tag">
+                      {{ . }}
+                    </span>
                   {{ end }}
               </div>
-            </div>
-          </li>
+            </li>
+          {{ end }}
         {{ end }}
-      {{ end }}
-    </ol>
+      </ol>
+    </div>
   </div>
 
   <ul class="projects-list">
