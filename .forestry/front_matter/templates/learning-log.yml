@@ -11,12 +11,6 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-- name: type
-  type: text
-  config:
-    required: false
-  label: type
-  description: 'The type of learning post, for example: blog, repo, code, etc.'
 - name: post-url
   type: text
   config:
