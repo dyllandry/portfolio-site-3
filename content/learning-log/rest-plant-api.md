@@ -4,6 +4,5 @@ description = "A barebones demo of REST API principles."
 post-url = "https://github.com/dyllandry/rest-plant-api"
 tags = ["nodejs", " express"]
 title = "REST API Example"
-type = "repo"
 
 +++

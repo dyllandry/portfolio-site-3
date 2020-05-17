@@ -19,6 +19,10 @@ $color-primary: rgb(58, 131, 220);
 $color-primary-dark: hsla(213, 70%, 45%, 1);
 $grey: #e4e4e4;
 $dark-grey: #646464;
+$white: white;
+$dark-white: #f7f7f7;
+
+$border-radius: 3px;
 
 /* ANCHOR LOST SETTINGS */
 @lost gutter 24px;
@@ -36,11 +40,11 @@ h3,
 h4,
 h5,
 ul,
+ol,
 p {
   margin: 0;
   padding: 0;
   list-style: none;
-  /* font-size: $medium-font; */
   font-weight: normal;  
 }
 
@@ -74,6 +78,13 @@ body {
 
 }
 
+/* ANCHOR OTHER */
+
+.emoji {
+  font-size: 24px;
+  margin: 0 $small-space;
+}
+
 /* ANCHOR HEADER */
 .header {
   position: sticky;
@@ -97,7 +108,7 @@ body {
     @extend %max-width;
     position: relative;
     padding: $small-space $medium-space;
-    color: white;
+    color: $white;
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -126,7 +137,7 @@ body {
     width: 28px;
     height: 28px;
     position: relative;
-    color: white;
+    color: $white;
   }
 
   &--placeholder {
@@ -134,13 +145,13 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 3px;
+    border-radius: $border-radius;
     transition: background-color 1s;
     background-color: rgba(255, 255, 255, 0);
   }
 
   i.outside-link--font-awesome-icon + &--placeholder {
-    background-color: white;
+    background-color: $white;
   }
 
   svg {
@@ -157,7 +168,7 @@ body {
 /* ANCHOR TAGLINE */
 .tag-line {
   position: relative;
-  color: white;
+  color: $white;
   overflow: hidden;
   padding-bottom: 56px;
   height: 56px;
@@ -194,10 +205,73 @@ body {
   }
 }
 
+/* ANCHOR LEARNING LOG BANNER */
+
+.learning-log-banner {
+  background-color: $white;
+  border: 2px solid $grey;
+  border-radius: $border-radius;
+  padding: $small-space;
+  align-text: center;
+  &--container {
+    @extend %max-width;
+    padding: 0 $medium-space;
+    margin-top: $large-space;
+    margin-bottom: $large-space;
+  }
+}
+
+/* ANCHOR LEARNING LOG */
+
+.learning-log {
+  border: 2px solid $grey;
+  background: $white;
+  border-radius: $border-radius;
+  &--header {
+    margin-top: $medium-space;
+    margin-bottom: $medium-space;
+  }
+  &--list {
+    @extend %max-width;
+    margin-top: $medium-space;
+    margin-bottom: $medium-space;
+    padding: 0 $medium-space;
+  }
+  &--content {
+    padding: $small-space;
+  }
+  &--title {
+    font-weight: bold;
+    margin-right: $medium-space;
+  }
+  &--description {
+    margin-right: $medium-space;
+  }
+  &--date {
+    color: $dark-grey;
+    margin-right: $medium-space;
+  }
+  &--tag {
+    background: $grey;
+    color: $dark-grey;
+    padding: 3px 5px;
+    margin-right: 6px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+}
+.learning-log:hover {
+  background: $dark-white;
+  cursor: pointer;
+}
+
+/* ANCHOR PROJECT */
+
 .projects-list {
   lost-center: $max-width;
-  padding: $medium-space;
-  padding-top: $very-large-space;
+  padding: 0 $medium-space;
+  margin-top: $large-space;
+  margin-bottom: $large-space;
   lost-utility: clearfix;
   
   &--item {
@@ -209,15 +283,13 @@ body {
   }
 }
 
-/* ANCHOR PROJECT */
-
 .project {
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: white;
   border: 2px solid $grey;
-  border-radius: 3px;
+  border-radius: $border-radius;
 
   &--title {
     font-weight: bold;
@@ -257,7 +329,7 @@ body {
 
   &--demo, &--repo {
     padding: 4px 9px;
-    border-radius: 3px;
+    border-radius: $border-radius;
   }
 
   &--repo {

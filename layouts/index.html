@@ -1,6 +1,29 @@
 {{ define "main" }}
 
-  <div class="body--background"></div>
+  <div class="learning-log--list">
+    <ol>
+      {{ range .Site.Pages }}
+        {{ if and .IsPage (eq "learning-log" .Type) }}
+          <li>
+            <div class="learning-log" onclick='window.location = "{{ .Param "post-url" }}"'>
+              <div class="learning-log--content">
+                <span class="learning-log--date">{{ dateFormat "2006-01-02" .Params.date }}</span>
+                <span class="learning-log--title">
+                  <a href='{{ .Param "post-url" }}'>{{ .Params.title }}</a>
+                </span>
+                <span class="learning-log--description">{{ .Params.description }}</span>
+                  {{ range .Params.tags  }}
+                  <span class="learning-log--tag">
+                    {{ . }}
+                  </span>
+                  {{ end }}
+              </div>
+            </div>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ol>
+  </div>
 
   <ul class="projects-list">
     
@@ -14,7 +37,7 @@
       {{ end }}
     {{ end }}
 
-    <!-- attach project image onload to remove placeholders  -->
+    <!-- fade out each project placeholder image when HD image loads -->
     <script>
       (function() {
         var imageDivs = document.querySelectorAll('.project-image')
@@ -35,24 +58,4 @@
     
   </ul>
 
-{{ end }}
-
-{{ define "footer" }}
-  <footer class="footer">
-    <div class="footer--content">
-      <ul class="footer--made-with">
-        <li>🐹 static building by <a href="https://gohugo.io/">Hugo</a></li>
-        <li>🌲 cms by <a href="https://forestry.io">Forestry</a></li>
-        <li>🌐 hosting by <a href="https://netlify.com">Netlify</a></li>
-      </ul>
-      <ul class="footer--contact">
-        <address>
-          <li>
-            📬 <a href="mailto:dylanglandry@gmail.com">dylanglandry@gmail.com</a>
-          </li>
-          <li>🇨🇦Toronto, Canada</li>
-        </address>
-      </ul>
-    </div>
-  </footer>
 {{ end }}

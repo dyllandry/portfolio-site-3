@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title> 
-  {{ $criticalCss := .Resources.GetMatch "critical.pcss" | toCSS }}
+  {{ $criticalCss := resources.Get "pcss/critical.pcss" | toCSS }}
   {{ $criticalStyle := $criticalCss | postCSS }}
   <style>{{ $criticalStyle.Content | safeCSS }}</style>
   <script defer src="https://kit.fontawesome.com/f60b7eadbc.js"></script>
@@ -14,16 +14,32 @@
 
   {{ partial "tag-line" . }}
   
+  <div class="body--background"></div>
+
   {{ block "main" . }}
 
   {{ end }}
 
-  {{ block "footer" . }}
-  
-  {{ end }}
+  <footer class="footer">
+    <div class="footer--content">
+      <ul class="footer--made-with">
+        <li>🐹 static building by <a href="https://gohugo.io/">Hugo</a></li>
+        <li>🌲 cms by <a href="https://forestry.io">Forestry</a></li>
+        <li>🌐 hosting by <a href="https://netlify.com">Netlify</a></li>
+      </ul>
+      <ul class="footer--contact">
+        <address>
+          <li>
+            📬 <a href="mailto:dylanglandry@gmail.com">dylanglandry@gmail.com</a>
+          </li>
+          <li>🇨🇦 Toronto, Canada</li>
+        </address>
+      </ul>
+    </div>
+  </footer>
   
   {{/*  defer loading of non critical stylesheet  */}}
-  {{ $nonCriticalCss := .Resources.GetMatch "non-critical.pcss" | toCSS (dict "targetPath" "non-critical.css") }}
+  {{ $nonCriticalCss := resources.Get "pcss/non-critical.pcss" | toCSS (dict "targetPath" "non-critical.css") }}
   {{ $nonCriticalStyle := $nonCriticalCss | postCSS }}
   <link 
     rel="preload"
