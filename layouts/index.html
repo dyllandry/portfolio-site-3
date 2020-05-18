@@ -47,9 +47,7 @@
                 <span class="learning-log--description">{{ .Params.description }}</span>
                 <span class="learning-log--tags">
                   {{ range .Params.tags  }}
-                    <span class="learning-log--tag">
-                      {{ . }}
-                    </span>
+                    <span class="learning-log--tag">{{ . }}</span>
                   {{ end }}
                 </span>
               </div>

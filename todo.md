@@ -1,6 +1,7 @@
 # TODO 
 
 - [ ] download fontawesome svgs (deferred 500kb)
+- [ ] increase contrast between project cards and background
 
 ## Learning Posts Page
 
