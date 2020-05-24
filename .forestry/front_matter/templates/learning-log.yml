@@ -17,16 +17,16 @@ fields:
     required: false
   description: Url to the learning post's content.
   label: post url
-- name: description
-  type: text
-  config:
-    required: false
-  label: description
 - name: title
   type: text
   config:
     required: false
   label: title
+- name: description
+  type: text
+  config:
+    required: false
+  label: description
 - name: tags
   type: tag_list
   default: []
