@@ -35,6 +35,7 @@ pages:
 - content/learning-log/a-barebones-demo-of-authorisation-using-oauth2.md
 - content/learning-log/added-a-learning-log-to-my-portfolio-site.md
 - content/learning-log/began-overthewire.md
+- content/learning-log/graphql.md
 - content/learning-log/long-polling.md
 - content/learning-log/rest-plant-api.md
 - content/learning-log/server-sent-events.md
