@@ -41,8 +41,9 @@
   {{/*  defer loading of non critical stylesheet  */}}
   {{ $nonCriticalCss := resources.Get "pcss/non-critical.pcss" | toCSS (dict "targetPath" "non-critical.css") }}
   {{ $nonCriticalStyle := $nonCriticalCss | postCSS }}
+	/* fallback to stylesheet link relationship if browser (firefox) does not support preload. */
   <link 
-    rel="preload"
+    rel="preload stylesheet"
     href="{{ $nonCriticalStyle.RelPermalink }}"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'"
