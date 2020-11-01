@@ -4,33 +4,15 @@
     
     {{ range sort .Site.Pages "Params.Order"}}
       {{ if and (eq .Type "projects") (.IsPage) }}
-      
-        <li class="projects-list--item">
-          {{ partial "project" . }}
-        </li>
+        {{ if lt .Params.Order 3 }}
 
+          <li class="projects-list--item">
+            {{ partial "project" . }}
+          </li>
+        {{ end}}
       {{ end }}
     {{ end }}
 
-    <!-- fade out each project placeholder image when HD image loads -->
-    <script>
-      (function() {
-        var imageDivs = document.querySelectorAll('.project-image')
-        for (var i = 0; i < imageDivs.length; i++) {
-          var imageDiv = imageDivs[i]
-          var image = imageDiv.querySelector('.project-image--img')
-          image.onload = function () {
-            var id = this.getAttribute('data-placeholder-id')
-            var placeholder = document.querySelector('.project-image--placeholder[data-placeholder-id="'+id+'"')
-            placeholder.style.opacity = 0;
-            this.onload = null
-          }
-          var src = image.getAttribute( 'data-src')
-          image.src = src
-        }
-      })()
-    </script>
-    
   </ul>
 
   <div class="learning-log--container">
@@ -57,5 +39,41 @@
       </ol>
     </div>
   </div>
+
+  <ul class="projects-list">
+    
+    {{ range sort .Site.Pages "Params.Order"}}
+      {{ if and (eq .Type "projects") (.IsPage) }}
+        {{ if gt .Params.Order 2 }}
+
+          <li class="projects-list--item">
+            {{ partial "project" . }}
+          </li>
+        {{ end}}
+      {{ end }}
+    {{ end }}
+
+  </ul>
+
+  <!-- Fade out project placeholder images when HD ones load. -->
+  <script>
+    (function() {
+      var projectHDImageDivs = document.querySelectorAll('.project-image')
+      for (var i = 0; i < projectHDImageDivs.length; i++) {
+        var projectImageDiv = projectHDImageDivs[i]
+        var projectImage = projectImageDiv.querySelector('.project-image--img')
+        // Attach onload event handler that will fade out placeholder image.
+        projectImage.onload = function () {
+          var id = this.getAttribute('data-placeholder-id')
+          var placeholderProjectImage = document.querySelector('.project-image--placeholder[data-placeholder-id="'+id+'"')
+          placeholderProjectImage.style.opacity = 0;
+          this.onload = null
+        }
+        // Request HD image by setting image src.
+        var src = projectImage.getAttribute( 'data-src')
+        projectImage.src = src
+      }
+    })()
+  </script>
 
 {{ end }}
