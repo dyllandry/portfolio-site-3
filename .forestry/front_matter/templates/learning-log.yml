@@ -40,5 +40,6 @@ pages:
 - content/learning-log/long-polling.md
 - content/learning-log/rest-plant-api.md
 - content/learning-log/server-sent-events.md
+- content/learning-log/show-ip.md
 - content/learning-log/talk-between-node-and-go.md
 - content/learning-log/validate-express-with-openapi.md
