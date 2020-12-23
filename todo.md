@@ -1,5 +1,6 @@
 # TODO 
 
+- [ ] new format for learning posts, wraps uggly on tablet, maybe do mobile layout with css columns
 - [ ] download fontawesome svgs (deferred 500kb)
 - [ ] increase contrast between project cards and background
 
