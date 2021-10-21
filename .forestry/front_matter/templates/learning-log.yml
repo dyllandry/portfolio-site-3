@@ -40,6 +40,7 @@ pages:
 - content/learning-log/graphql.md
 - content/learning-log/long-polling.md
 - content/learning-log/love-machine.md
+- content/learning-log/opengl-shapes.md
 - content/learning-log/recursive-star-triangle.md
 - content/learning-log/rest-plant-api.md
 - content/learning-log/server-sent-events.md
