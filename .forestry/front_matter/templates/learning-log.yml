@@ -44,6 +44,7 @@ pages:
 - content/learning-log/opengl-x-macro.md
 - content/learning-log/recursive-star-triangle.md
 - content/learning-log/rest-plant-api.md
+- content/learning-log/rust-guessing-game.md
 - content/learning-log/server-sent-events.md
 - content/learning-log/show-ip.md
 - content/learning-log/talk-between-node-and-go.md
