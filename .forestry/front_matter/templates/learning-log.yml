@@ -47,6 +47,7 @@ pages:
 - content/learning-log/rust-guessing-game.md
 - content/learning-log/server-sent-events.md
 - content/learning-log/show-ip.md
+- content/learning-log/spinning-3d-opengl-cubes.md
 - content/learning-log/talk-between-node-and-go.md
 - content/learning-log/transforming-graphql-shapes.md
 - content/learning-log/upcoming-invoices-to-excel.md
